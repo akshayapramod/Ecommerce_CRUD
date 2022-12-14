@@ -1,0 +1,60 @@
+{% extends 'commontemplates/common_master.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<section>
+    <div class="container">
+        <h1>Create Account</h1>
+
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="firstname">
+        <label for="">YourName</label> <br />
+        <input type="text" placeholder="first and lastname" name = "c_name"><br />
+        <label for="">Mobile Number</label> <br />
+        <input type="number" placeholder="Enter Your Mobile No." name = "c_mobile"><br />
+        <label for="">Address</label> <br />
+        <input type="text" placeholder="Address" name = "c_address"><br />
+        <label for="">Gender</label> <br />
+        <input type="radio" class="gender" name = "c_gender" checked value="male">Male<br />
+        <input type="radio" class="gender" name = "c_gender" value="female">Female<br />
+        <label for="">E-mail</label> <br />
+        <input type="email" placeholder="Enter Your email" name = "c_mail" id="email"><br />
+        <label for="">Password</label> <br />
+        <input type="password" placeholder="Enter Your Password" name = "c_pass"><br />
+        <label for="exampleInputFile" class="form-label">Photo</label>
+        <input type="file" class="form-control" id="exampleInputFile" name="c_pic">
+        <button class="btn-1">Continue</button>
+    </div>
+    </form>
+</section>
+<script>
+    $('#email').change(function(){
+        $.ajaxSetup({
+            headers: {
+              "X-CSRFToken": $('[name=csrfmiddlewaretoken]').val()  //passing csrf token in ajax request
+            }
+        })
+
+        $.ajax({
+            url:"{% url 'common:email_exist' %}",  // url in which ajax call is made
+            type:'POST',  //method in which data is send
+            data:{
+                email:$(this).val()  //sending data in json fromat here, key is email
+            },
+            success:function(response){   
+                console.log(response.status)
+                alert('email id already exists')
+            }
+        })
+    })
+</script>
+  
+{% endblock %}
+

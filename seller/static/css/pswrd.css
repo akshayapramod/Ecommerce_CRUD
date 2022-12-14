@@ -1,0 +1,34 @@
+.pswrd{
+    text-align: center;
+    
+}
+.pswrd input{
+    width: 200px;
+    height: 50px;
+}
+.crntpswrd{
+    margin-left: 17px;
+}
+.btn-btn{
+  margin-left: 870px;
+  
+}
+
+/*seller*/
+.catalog-2 p{
+    text-align: center;
+
+}
+.btn1{
+    margin-left: 100px;
+
+    
+}
+.cataloges{
+    margin-left: 150px;
+}
+.catalog-2{
+    margin-top: 30px;
+}
+
+

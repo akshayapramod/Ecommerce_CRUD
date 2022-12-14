@@ -1,0 +1,35 @@
+{% extends 'commontemplates/common_master.html' %}
+{% load static %}
+{% block content %}
+
+<div>
+    <img src="{% static 'images/prof.png' %}" alt="" width="400px" height="500px">
+
+    <p>Name: {{sprofile.seller_name}}</p>
+    <p>E-mail: {{sprofile.seller_email}}</p>
+    <p>Phone: {{sprofile.seller_phone}}</p>
+    <p>Address: {{sprofile.seller_address}}</p>
+</div>
+
+
+         
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

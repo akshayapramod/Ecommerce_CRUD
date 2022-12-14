@@ -1,0 +1,28 @@
+{% extends 'commontemplates/common_master.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/pswrd.css' %}">
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="cataloges">
+                    <div class="catalog-2">
+                        <img src="{{details.product_image.url}}" alt="">
+                        <form method="POST">
+                            {% csrf_token %}
+                        <h4>name:{{details.product_name}}</h4>
+                        <p>product description:{{details.product_description}}</p>
+                        <p>price:{{details.price}}</p>
+                        <button type="submit" class="btn btn-primary">ADD TO CART</button>
+                        {{msg}}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

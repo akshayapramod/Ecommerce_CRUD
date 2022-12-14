@@ -1,0 +1,71 @@
+{% extends 'commontemplates/common_master.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+    <div class="text-center p-4">
+        <h1 style="color:  rgb(0, 140, 255);">ADD PRODUCT</h1>
+    </div>
+
+    <div class="container bg-light">
+        <br>
+      <div class="row">
+        <div class="col-md-6 p-4">
+
+            <form method="POST" enctype="multipart/form-data">
+
+              {% csrf_token %}
+              {{msg}}
+                <div class="mb-3">
+                  <label for="" class="form-label "><b>Product Name</b></label>
+                  <input type="text" name="s_productname" class="form-control" id="" >
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label "><b>Description</b></label>
+                    <input type="text" name="s_description" class="form-control" id="" >
+                </div>
+
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                      <label for="" class="col-form-label "><b>Product Number</b></label>
+                    </div>
+                    <div class="col-auto">
+                      <input type="number" name="s_productnumber" id="" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                </div> <br>
+
+
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                          <label for="" class="col-form-label "><b>Price</b>&nbsp;&nbsp;</label>
+                        </div>
+                        <div class="col-auto">
+                          <input type="number" name="s_price" id="" class="form-control" aria-describedby="passwordHelpInline">
+                        </div>
+                    </div> <br>
+
+                    <div class="mb-3">
+                        <label for="" class="form-label "><b>Current Stock</b></label>
+                        <input type="number" name="s_currentstock" class="form-control" id="" >
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="" class="form-label"><b>File Upload</b></label>
+                        <input type="file" name="s_fileupload" class="form-control" id="" >
+                    </div>
+
+
+
+                <button type="submit" class="btn btn-primary"><b>Submit</b></button>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+          <img src="{% static 'images/add.jpg' %}" alt="" width="450px" height="400px" style="margin-top: 20px;">
+        </div>
+      </div>
+
+{% endblock %}

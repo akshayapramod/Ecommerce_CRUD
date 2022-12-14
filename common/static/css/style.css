@@ -1,0 +1,79 @@
+footer{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: black;
+    color: #fff;
+    padding: 50px 0 -30;
+    /* border-top-left-radius: 125px; */
+    font-size: 13px;
+    line-height: 20px;
+
+}
+.row{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+label.logo-foot{
+    width: 80px;
+    margin-bottom: 30px;
+    padding-left: -10px;
+}
+.col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+.email-id{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+.col ul li{
+    list-style: none;
+    margin-bottom: 12px;
+}
+.col ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+form{
+    padding-bottom: 15px;
+}
+
+
+.firstname{   
+    margin-left: 580px;
+    margin-top: 50px;
+}
+.firstname input{
+    width: 500px;
+    height: 50px;
+    font-size: 20px;
+    border: 1px solid black;
+}
+h1{
+    text-align: center;
+}
+.btn-1{
+    border: 1px solid greenyellow;
+    border-radius: 30px;
+    width: 200px;
+    height: 40px;
+    background-color: aqua;
+    margin-left: 170px;
+    margin-top: 10px;
+}
+.gender{
+    width: 50px;
+    height: 50px;
+}
+.footer{
+
+}

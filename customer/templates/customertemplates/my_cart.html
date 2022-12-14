@@ -1,0 +1,34 @@
+{% extends 'commontemplates/common_master.html' %}
+{% load static %}
+{% block content %}
+
+<table class="table table-striped">
+  {% if cart_list %}
+    <tr>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>image</th>
+
+    </tr>
+    {% for cart in customer_cart %}
+    <tr class=" table-active">
+
+      <td>{{cart.product_details.product_name}}</td>
+      <td>{{cart.product_details.product_description}}</td>
+      <td>{{cart.product_details.price}}</td>
+      <td>Remove</td>
+      <td><a href="{% url 'customer:remove_item' cart.product.id %}">Remove</a></td>
+      <td><img src="{{cart.product_details.product_image.url}}" alt=""></td>
+    </tr>
+    {% endfor %}    
+  </table>
+  {% else %}
+  <h1>Cart Empty</h1>
+  {% endif %}
+  </div>
+
+
+
+
+{% endblock %}
